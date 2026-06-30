@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an instance of Axios
 const api = axios.create({
-  baseURL: '', // Empty because we are using Vite dev server proxy in development
+  baseURL: 'https://billing-master-api.onrender.com', // Empty because we are using Vite dev server proxy in development
   headers: {
     'Content-Type': 'application/json',
   },
