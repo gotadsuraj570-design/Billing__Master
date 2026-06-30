@@ -114,18 +114,7 @@ The codebase follows a standard **MVC (Model-View-Controller)** separation:
 
 ---
 
-## 🎓 Viva Questions Cheat Sheet
 
-Be prepared to answer these common questions in your project viva:
-
-1.  **How is authorization implemented?**
-    *   *Answer*: We use JWT (JSON Web Tokens). When a user logs in, the backend verifies credentials, signs a token with the user's ID/email using a secret key, and sends it back. The frontend saves it in `localStorage` and injects it into the `Authorization` header of every outgoing Axios request using an API interceptor.
-
-2.  **How do you prevent stock levels from dropping below zero when multiple bills are created?**
-    *   *Answer*: In `billController.js`, billing is handled inside a **PostgreSQL Transaction** (`BEGIN`, `COMMIT`, `ROLLBACK`). Before inserting bill items, the backend queries the database for each product's stock. If the requested quantity exceeds the stock, the backend throws an error and executes a `ROLLBACK`, restoring all changes to maintain database consistency.
-
-3.  **What is the role of the Vite proxy server?**
-    *   *Answer*: In `vite.config.js`, we configure a proxy for `/api` pointing to `http://localhost:5000`. This means all requests to `/api/*` are forwarded from the frontend server to the backend server. It simplifies API paths (no need to hardcode URLs in Axios) and resolves Cross-Origin Resource Sharing (CORS) security issues during local development.
 
 4.  **Why do we use Tailwind CSS v4?**
     *   *Answer*: Tailwind CSS v4 has a new high-performance Rust engine, simplifying configuration. Instead of a large config file, it uses CSS variables and a single `@import "tailwindcss";` in `src/index.css`. The compiler handles all utilities automatically.
