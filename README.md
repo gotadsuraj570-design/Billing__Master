@@ -116,5 +116,3 @@ The codebase follows a standard **MVC (Model-View-Controller)** separation:
 
 
 
-4.  **Why do we use Tailwind CSS v4?**
-    *   *Answer*: Tailwind CSS v4 has a new high-performance Rust engine, simplifying configuration. Instead of a large config file, it uses CSS variables and a single `@import "tailwindcss";` in `src/index.css`. The compiler handles all utilities automatically.
