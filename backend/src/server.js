@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 
 // Enable Cross-Origin Resource Sharing (CORS)
 app.use(cors({
-  origin: '*', // In production, replace with specific frontend URL
+  origin: 'https://your-app-name.vercel.app', // In production, replace with specific frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
